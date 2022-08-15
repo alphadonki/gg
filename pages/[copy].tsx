@@ -4,6 +4,7 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 import Script from 'next/script'
+import img from 'next/image'
 
 const Home: NextPage = () => {
   return (
@@ -22,7 +23,7 @@ const Home: NextPage = () => {
     content="width=device-width, height=device-height, initial-scale=1, user-scalable=no"
   />
   <meta name="msapplication-TileColor" content="#000000" />
-  <meta name="msapplication-TileImage" content="/images/ms-icon-144x144.png" />
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
   <meta name="theme-color" content="#000000" />
   <meta property="og:image" content="" />
   <meta property="og:title" content="AlphaDonki" />
@@ -33,14 +34,14 @@ const Home: NextPage = () => {
     rel="icon"
     type="image/png"
     sizes="32x32"
-    href="../public/assets/fav/favicon-32x32.png"/>
+    href="//favicon-32x32.png"/>
   <link
     rel="icon"
     type="image/png"
     sizes="16x16"
-    href="../public/assets/fav/favicon-16x16.png"
+    href="/favicon-16x16.png"
   />
-  <link rel="manifest" href="/assets/fav/site.webmanifest" />
+  <link rel="manifest" href="/site.webmanifest" />
   <meta name="msapplication-TileColor" content="#da532c" />
   <meta name="theme-color" content="#ffffff" />
 </Head>
@@ -58,7 +59,7 @@ const Home: NextPage = () => {
         <div className="bubble x10" />
       </div>
       <div className="loader">
-        <img src="logo-intro.png" alt="Loading..." />
+        <Image src="/logo-intro.png" alt="Loading..." width="200px" height="200px"/>
       </div>
 
 
@@ -95,7 +96,10 @@ const Home: NextPage = () => {
         id="w-node-f64aa1bf-a3b0-9533-c762-1410582692cd-582692c6"
         className="navbar3_menu w-nav-menu"
       >
-        <a href="#" className="navbar3_logo-link-menu w-nav-brand"></a>
+        <a href="#" className="navbar3_logo-link-menu w-nav-brand">
+          <Image src="/ad-logo.svg"  loading="lazy" layout='fill' /></a>
+
+
         <a className="navbar3_link_not left-mobile">STAKING</a>
         <a className="navbar3_link_not left-mobile">RAFFLES</a>
         <a className="navbar3_link_not left-mobile">SHOP</a>
@@ -131,6 +135,8 @@ const Home: NextPage = () => {
         aria-current="page"
         className="navbar3_logo-link w-nav-brand w--current"
       >
+        <Image src="/ad-logo.svg"  loading="lazy" width={"35px"} height={"35px"} />
+
       
       </a>
       <nav
@@ -144,12 +150,17 @@ const Home: NextPage = () => {
           className="mobile-nav-brand-block margin-bottom margin-medium w-inline-block w--current"
         >
           <div
-            className="mobilenav-menu-title margin-left margin-medium"
+            className="mobilenav-menu-title margin-left margin-medium" 
             style={{ color: "rgb(40, 40, 40)" }}
           >
-            {" "}
-            AlphaDonki
-          
+           
+            <Image 
+              src="/ad-logo-black.svg"
+              width={"40%"} height={"40%"}
+              alt="" />
+         
+         
+            
           </div>
         </a>
         <a className="navbar3_link_not left-mobile">TEAM</a>
@@ -162,33 +173,62 @@ const Home: NextPage = () => {
       <div className="navbar3_menu-background" />
     </div>
   </div>
-  <div className="page-wrapper landing">
+  <div className="page-wrapper landing" >
     <main className="main-wrapper-landing">
       <div className="div-block-5">
-        <div className="div-block-4">
+        <div style={{ padding: '1px' }} className="div-block-4" >
           <div className="div-block-19">
             <p> Are u Alpha Enough?</p>
-            <h1 className="landing-heading">ALPHA</h1>
-            <h1>DONKI.. </h1>
+            <h3 className="landing-heading">ALPHA</h3>
+            <h4 className="landing-heading-down">DONKI</h4>
             <div className="div-block-9"></div>
           </div>
         </div>
-        <div className="div-block">
+        <div  className="div-block">
           <a href="https://twitter.com/alphadonki"
             rel="opener"
             className="social-link w-inline-block"
           >
+
+          <Image
+              src="/twtter_1.svg"
+              width="25px" height="25px"
+              loading="lazy"
+              alt=""
+              className="icon-xsmall"/></a>
+
+          <a href="https://discord.com/invite/ZpJ44GtWj9" rel="noopener" className="social-link w-inline-block">
+             
+             <Image
+              src="/discord_1.svg"
+              width="25px" height="25px"
+              loading="lazy"
+              alt=""
+              className="icon-xsmall"/>
             
-          </a>
-          <a href="https://discord.com/invite/ZpJ44GtWj9"
-            rel="noopener"
-            className="social-link w-inline-block">
-            
-          </a>
+            </a>
+
         </div>
       </div>
     </main>
+
+  
     <div className="div-block-3">
+      <img
+        src="/ad-bg.png"
+        loading="lazy"
+        srcSet="
+        /ad-bg.png  500w,
+        /ad-bg.png  800w,
+        /ad-bg.png  1080w,
+        /ad-bg.png   1600w,
+        /ad-bg.png   2308w
+    "
+        sizes="100vw"
+        alt=""
+        className="landing-bg"
+      />
+      
       
       <div className="w-layout-grid footer4_bottom-wrapper home-page">
         <a
@@ -212,6 +252,8 @@ const Home: NextPage = () => {
 
 <Script src="/1.js" type="text/javascript"></Script>
 <Script src="/2.js" type="text/javascript"></Script>
+<Script src="/loader.js" type="text/javascript"></Script>
+<Script src="/main.js" type="text/javascript"></Script>
 
 </>)}
 export default Home
